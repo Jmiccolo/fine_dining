@@ -1,12 +1,14 @@
 .section_top {
-    height: 25vw;
+    height: 100vh;
     background: url("/images/atmosphere.jpg") no-repeat;
     background-size: cover;
     background-position: 10% 10%;
+    filter: grayscale(0.50);
     display: flex;
     align-items:center;
     justify-content: center;
-
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 .section_top_text {
     color: #fffff4;
@@ -18,22 +20,31 @@
     font-family: "Libre Baskerville", serif;
 
 }
-.section{
+.section {
+    width: 100%;
+}
+.section_div{
         width: 100%;
         display: flex;
         align-items: center;
-        margin: 20px 0;
-        transition: opacity 750ms ease-in-out, transform 500ms ease-out;
+        transform: translateX(0);
+        transition: opacity 500ms ease-in-out, transform 1.5s ease-out;
 }
 .section_even {
-    background: linear-gradient(to top, #fffff4 0%, #fffff4 20%, transparent 20%, transparent 100%), linear-gradient(to left, transparent 0%, transparent 20%, black 20%, black 100%);
+    background: linear-gradient(to top right, #fffff4 0%, #fffff4 25%, black 25%, black 75%, #fffff4 75%, #fffff4 100%)
 }
 .section_odd {
-    background: linear-gradient(to top, #fffff4 0%, #fffff4 20%, transparent 20%, transparent 100%), linear-gradient(to right, transparent 0%, transparent 20%, black 20%, black 100%)
+    background: linear-gradient(to top left, #fffff4 0%, #fffff4 25%, black 25%, black 75%, #fffff4 75%, #fffff4 100%);
 }
 .section_image {
     max-height: 40vw;
-    padding: 20px;
+    padding: 10px;
+    margin: 10px; 
+    filter: grayscale(0.50);
+    transition: filter 500ms ease-in-out;
+}
+.section-image:hover {
+    filter:grayscale(0);
 }
 .section_text {
     color: #fffff4;
@@ -50,25 +61,10 @@
     align-self: flex-start;
     text-align: center;
 }
-.section_text_odd {
-    color: #fffff4;
-    text-shadow: 2px 2px 1px black;
-    font-family: "Montserrat", sans-serif;
-    font-size: 2vw;
-    line-height: 2;
-    font-weight: 700;
-    width: 50%;
-    left: 40%;
-    margin: 2vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
 
 .section_button{
     padding: 4px;
-    width: 50%;
+    width: fit-content;
     font-size: 2vw;
     background: none;
     color: white;
@@ -77,6 +73,33 @@
 }
 
 .hidden {
-    transform: translateX(-200px);
+    transform: translateY(-100px);
     opacity: 0;
+}
+
+@media only screen and (max-width: 650px) {
+    .section_top_text{
+        font-size: 10vw;
+        width: 90%;
+        line-height: 2;
+    }
+    .section {
+        height: 40vh;
+    }
+    .section_image {
+        max-height: 35vh;
+        max-width: 55vw;
+    }
+    .section_text {
+        font-size: 75%;
+        line-height: 1.25;
+    }
+    .section_button {
+        font-size: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }

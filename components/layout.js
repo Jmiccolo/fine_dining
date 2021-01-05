@@ -1,5 +1,7 @@
+import {useState} from "react"
 import Head from 'next/head'
 import Link from 'next/link'
+import NavButton from '../components/navbutton'
 import utilStyles from '../styles/util.module.css'
 
 export const site = {
@@ -15,8 +17,10 @@ export const site = {
         email: "eloiseManagement@eloise.com",
         phone: "555-555-5555"
     }
-
-export default function Layout({children}){
+const roseRed = "#c21e56";
+export default function Layout({home, children}){
+    let fill = home ? "#ffffff4" : "black";
+    const [buttonFill, setButtonFill] = useState(fill);
     const hours = Object.keys(site.hours).map((val,index)=>{
            return( <div style={{margin:"0 8px"}} key={index}>
                 {val}:<div>{site.hours[val].map((times, index) =>(<div key={index}>{times} <br/></div>))}</div>
@@ -24,9 +28,16 @@ export default function Layout({children}){
            )
     })
     const navbarButton = ()=>{
-        const navlist = document.querySelector(`.${utilStyles.navbar_list}`);
-        console.log(utilStyles.navbar_list);
-        navlist.classList.toggle(utilStyles.navbar_list_show);
+        if(home){
+            const navlist = document.querySelector(`.${utilStyles.navbar_list_home}`);
+            navlist.classList.toggle(utilStyles.navbar_list_show);
+            
+        }
+        else {
+            const navlist = document.querySelector(`.${utilStyles.navbar_list}`);
+            navlist.classList.toggle(utilStyles.navbar_list_show);
+        }
+        buttonFill !== fill ? setButtonFill(fill) : setButtonFill(roseRed);
     }
     return (
         <>
@@ -37,11 +48,11 @@ export default function Layout({children}){
           <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Montserrat&display=swap" rel="stylesheet"/>
         </Head>
-        <header>
+        <header className={home ? utilStyles.header_home : utilStyles.header }>
             <nav className={utilStyles.navbar}>
-                <Link href="/"><a className={utilStyles.navbar_logo}><img style={{width:"100%"}} src={site.logo} alt={site.title}/></a></Link>
-                <img className={utilStyles.navbar_button} src="/images/navbutton.svg" onClick={navbarButton}/>
-                <ul className={utilStyles.navbar_list}>
+                <Link href="/"><a className={home ? utilStyles.navbar_logo_home:utilStyles.navbar_logo}><h1>Elo&igrave;s&eacute;</h1></a></Link>
+                <div className={utilStyles.navbar_menu}>Menu <NavButton handleClick = {navbarButton} fill={buttonFill}/></div>
+                <ul className={home ? utilStyles.navbar_list_home : utilStyles.navbar_list}>
                     <li>
                         <Link href="/about"><a>About</a></Link>
                     </li>
@@ -59,9 +70,8 @@ export default function Layout({children}){
         </header>
         <main>{children}</main>
         <footer>
-            <address style={{padding:"5%", display:"flex", justifyContent:"space-between", flexWrap:"wrap"}}>
+            <address>
                 <p>Location: {site.location}</p>
-                <div style={{display: "flex"}}>Hours: {hours}</div>
                 <p>Email: <a href={`mailto:${site.email}`}>{site.email}</a></p>
                 <p>Phone: <a href='tel:+15555555555'>{site.phone}</a></p>
             </address>

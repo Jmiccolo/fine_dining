@@ -1,14 +1,14 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="1280.000000pt" height="1186.000000pt" viewBox="0 0 1280.000000 1186.000000"
+import utilStyles from "../styles/util.module.css"
+export default function Navbutton({fill, handleClick}){
+    return(
+<svg onClick={handleClick} className={utilStyles.navbar_button} version="1.0" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 1280.000000 1186.000000"
  preserveAspectRatio="xMidYMid meet">
 <metadata>
 Created by potrace 1.15, written by Peter Selinger 2001-2017
 </metadata>
-<g transform="translate(0.000000,1186.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
+<g className={utilStyles.navbar_rose} transform="translate(0.000000,1186.000000) scale(0.100000,-0.100000)"
+fill={fill} stroke="none">
 <path d="M6784 11851 c-67 -11 -137 -75 -277 -251 -78 -99 -119 -141 -174
 -179 -32 -22 -67 -29 -351 -72 l-73 -12 -85 -128 c-46 -70 -113 -183 -149
 -251 l-64 -124 59 -62 c77 -81 98 -83 247 -21 210 88 397 196 520 302 61 52
@@ -176,4 +176,4 @@ c-206 -116 -264 -137 -446 -160 -352 -45 -597 -111 -862 -232 -60 -27 -127
 211 303 417 209 336 292 437 518 627 108 90 183 179 227 268 27 55 34 82 37
 149 l4 82 -47 83 c-153 267 -338 430 -580 514 -118 40 -327 60 -465 44z"/>
 </g>
-</svg>
+</svg>)}

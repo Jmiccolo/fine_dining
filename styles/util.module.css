@@ -1,40 +1,82 @@
+.header_home{
+    position: fixed;
+}
+.header {
+    position: sticky;
+    background-color: #fffff4;
+}
 .navbar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
-.navbar_list {
-    position: fixed;
+.navbar_list, .navbar_list_home {
+    position: relative;
     padding: 0;
     margin: 0;
-    width: 90%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: flex-end;
     font-size: 2vw;
+    font-weight: 700;
     font-family: "Montserrat", sans-serif;
+}
+.navbar_list {
+    color: black;
+    background-color: #fffff4;
+    text-shadow: none;
 }
 .navbar_list li {
     padding: 1vw;
 }
-
-.navbar_logo{
-    width: 20%;
-    padding: 1rem 1rem 0 1rem;
-    filter: drop-shadow(1px 1px 1px #010101);
-    border-bottom:2px solid black;
+.navbar_logo_home {
+    color:#fffff4;
 }
-.navbar_button{
-    width: 10%;
-    height: 50%;
-    margin: 0 10px;
+.navbar_logo_home h1{
+    font-size: 4vw;
+    font-family: "Libre Baskerville", serif;
+    text-shadow: 2px 2px 2px black;
+    padding: 0;
+    padding-left: 1rem;
+    margin: 0;
+}
+.navbar_logo {
+    color:black;
+    text-shadow: none;
+}
+.navbar_logo h1{
+    font-size: 4vw;
+    font-family: "Libre Baskerville", serif;
+    padding: 0;
+    padding-left: 1rem;
+    margin: 0;
+}
+.navbar_logo:hover, .navbar_logo_home:hover {
+    text-decoration: none;
+}
+.navbar_menu {
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    font-size: 5vw;
+    font-weight: 600;
+    
     display: none;
-    align-self: center;
+    transition: text-shadow 500ms ease-in-out;
+}
+.navbar_button, .navbar_button_home{
+    width: 50%;
+    height: 100%;
+    margin: 10px;
+    align-self: flex-end;
     border: 1px solid black;
     border-radius: 10px;
+    filter:drop-shadow(1px 1px 2px #fffff4)
 }
-.navbar_button:active {
-    color:red;
+.navbar_rose{
+    transition: fill 500ms ease-in-out;
 }
 
 @media only screen and (max-width:650px) {
@@ -43,22 +85,27 @@
         justify-content: space-between;
         flex-wrap: wrap;
     }
-    .navbar_list {
+    .navbar_list, .navbar_list_home {
         width: 100%;
         height: 0;
+        font-size: 4vw;
         overflow: hidden;
         flex-direction: column;
         align-items:center;
-        transition: height 1s ease-in-out;
+        transition: height 750ms ease-in-out;
+    }
+    .navbar_logo h1, .navbar_logo_home h1 {
+        border: none;
+        font-size: 9vw;
     }
     .navbar_list_show {
-        height: 100px;
+        height: 30vw;
     }
-    .navbar_logo {
+    .navbar_logo, .navbar_logo_home {
         border: none;
         width: 40%;
     }
-    .navbar_button {
-        display: block;
+    .navbar_menu {
+        display: flex;
     }
 }
