@@ -1,0 +1,51 @@
+.reservation {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    color: #fffff4;
+    background: black;
+    padding: 2.5% 0;
+}
+.reservation_div {
+    width: 80%;
+    display: flex;
+}
+.reservation_contact {
+    flex-direction: column;
+    align-items: center;
+}
+.resForm {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.reservation_contact .resForm {
+    align-items: center;
+}
+.reservation_contact .resForm label {
+    align-self: flex-start;
+}
+.resForm input, .resForm textarea, .resForm select {
+    background-color: #fffff4;
+    border-color: rgba(0,0,0, 0.25);
+    width: 100%;
+}
+
+.resForm button{
+    font-size: 20px;
+    background-color: black;
+    color: #fffff4;
+    border: 1px solid #fffff4;
+    margin-top: 5px;
+    width: 50%;
+}
+
+.resForm_container{
+    width: 50%;
+}
+
+.loading {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}

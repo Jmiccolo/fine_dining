@@ -1,7 +1,15 @@
+import {useEffect} from "react"
 import Layout from "../components/layout"
 import styles from "../styles/about.module.css"
+import {animateSection, clearObservers} from "../lib/observers"
 
 export default function about(){
+    useEffect(()=>{
+    let setObserver = animateSection(styles, 0.1);
+    return function cleanup(){
+      clearObservers(setObserver, styles)
+    };
+  })
     return (
         <Layout>
             <section className={`${styles.section} ${styles.section_even}`}>

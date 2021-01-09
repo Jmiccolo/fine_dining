@@ -13,7 +13,8 @@
     width: 100%;
     max-width: 1000px;
     margin: auto;
-    padding: 0 10vh 10vh 10vh;}
+    transition: opacity 1s ease-in-out, transform 2s ease-out;
+}
 .section_aside {
     width: 50%;
 }
@@ -29,7 +30,7 @@
     padding: 0;
 }
 .section_article p{
-    font-size: 2vw;
+    font-size: 1.9vw;
     width: 80%;
 }
 .section_odd .section_article {
@@ -43,6 +44,7 @@
 .section_img {
     width: 80%;
     min-width: 35vw;
+    animation: fadeIn 2s ease-in;
 }
 
 @media only screen and (max-width: 650px){
@@ -56,5 +58,9 @@
     font-size: 1.75vh;
     width: 100%;
 }
-.section_img
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }

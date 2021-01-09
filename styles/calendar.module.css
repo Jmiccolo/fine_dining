@@ -1,0 +1,87 @@
+.calendar{
+    width: 50%;
+    border: 1px solid #fffff4;
+    align-self: center;
+
+}
+.calendarControl{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.calendarControl_header{
+    width: 100%;
+    background-color: black;
+    color: #fffff4;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.calendarControl_controller{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.calendarControl_jump {
+    width: 100%;
+}
+.calendarControl button {
+    background:black;
+    color: #fffff4;
+    border: none;
+    font-size: 1.5vw;
+}
+.calendarControl input {
+    background:black;
+    color: #fffff4;
+    border: none;
+    width: 4char;
+}
+.calendarControl select {
+    background:black;
+    color: #fffff4;
+    border: none;
+    width: 4char;
+}
+
+.dateBox {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40vh;
+}
+
+.date{
+    width: 14%;
+    height: 15%;
+    flex-grow: 1;
+    background-color: #fffff4;
+    color: black;
+    border: 1px solid black;
+}
+.date h4{
+    display: inline;
+    margin: 0;
+    font-size: 1.5vh;
+}
+.selected {
+    background-color: #c21e56;
+}
+
+.disabled {
+    background-color: black;
+    color: #fffff4;
+    border: 1px solid #fffff4;
+}
+.past {
+    background-color: grey;
+}
+
+.weekHeader {
+    width: 14%;
+    flex-grow: 1;
+    border: 1px solid #fffff4;
+    text-align: center;
+    font-size: 2vh;
+}

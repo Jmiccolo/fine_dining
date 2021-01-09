@@ -1,9 +1,13 @@
 .header_home{
     position: fixed;
+    width: 100%;
 }
 .header {
     position: sticky;
+    width: 100%;
     background-color: #fffff4;
+    color: black;
+    text-shadow: none;
 }
 .navbar {
     display: flex;
@@ -15,7 +19,7 @@
     position: relative;
     padding: 0;
     margin: 0;
-    width: 80%;
+    flex-grow: 1;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
@@ -29,6 +33,7 @@
     text-shadow: none;
 }
 .navbar_list li {
+    box-sizing: border-box;
     padding: 1vw;
 }
 .navbar_logo_home {
@@ -62,7 +67,6 @@
     align-items: center;
     font-size: 5vw;
     font-weight: 600;
-    
     display: none;
     transition: text-shadow 500ms ease-in-out;
 }
@@ -77,6 +81,21 @@
 }
 .navbar_rose{
     transition: fill 500ms ease-in-out;
+    fill: black;
+}
+.header_home .navbar_rose{
+    fill:#fffff4;
+}
+.clicked{
+    fill: #c21e56;
+}
+.navbar_rose.clicked{
+    fill: #c21e56;
+}
+
+.hiddenSection {
+    transform: translateY(-100px);
+    opacity: 0;
 }
 
 @media only screen and (max-width:650px) {

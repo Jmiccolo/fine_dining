@@ -1,0 +1,97 @@
+.menuNav {
+    width: 100vw;
+    position: sticky;
+    top: 8vh;
+}
+
+.menuNav_list {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.menuNav_list li {
+    width: 33%;
+    flex-grow: 1;
+}
+
+.menuNav li button {
+    width: 100%;
+    background: #fffff4;
+    border: none;
+    font-size: 3vh;
+}
+.menuNav li button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.active {
+    text-decoration: underline;
+    border: 5px solid black;
+}
+
+.menu {
+    display: flex;
+    width: 100%;
+    font-family: "Libre Baskerville", serif;
+}
+
+.menu_page {
+    width:50%;
+    border: 10px solid black;
+    padding: 2.5%;
+    margin: 2.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu_page h2, .menu_page h3, .menu_page h4, .menu_page h5, .menu_page p {
+    margin: 0;
+    padding: 0;
+}
+
+.line {
+    width: 75%;
+    background-image: url("/images/lineBreak.svg");
+    height: 10vh;
+    border: 0;
+    background-size: cover;
+    background-position: center;
+
+}
+.menuHeader {
+    background-image:url("/images/menuHeader.svg");
+    width: 80%;
+    border: 0;
+    height: 10vh;
+    background-size: cover;
+    background-position: center;
+}
+.menuFooter {
+    background-image:url("/images/menuHeader.svg");
+    width: 80%;
+    border: 0;
+    height: 10vh;
+    background-size: cover;
+    background-position: center;
+    transform: rotate(180deg);
+}
+.menuList {
+    width: 80%;
+    font-family: "Libre Baskerville", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+}
+.menuList li {
+    margin: 0;
+    padding: 0;
+}

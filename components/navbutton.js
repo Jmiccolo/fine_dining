@@ -1,5 +1,5 @@
 import utilStyles from "../styles/util.module.css"
-export default function Navbutton({fill, handleClick}){
+export default function Navbutton({handleClick}){
     return(
 <svg onClick={handleClick} className={utilStyles.navbar_button} version="1.0" xmlns="http://www.w3.org/2000/svg"
 viewBox="0 0 1280.000000 1186.000000"
@@ -8,7 +8,7 @@ viewBox="0 0 1280.000000 1186.000000"
 Created by potrace 1.15, written by Peter Selinger 2001-2017
 </metadata>
 <g className={utilStyles.navbar_rose} transform="translate(0.000000,1186.000000) scale(0.100000,-0.100000)"
-fill={fill} stroke="none">
+stroke="black" strokeWidth="200">
 <path d="M6784 11851 c-67 -11 -137 -75 -277 -251 -78 -99 -119 -141 -174
 -179 -32 -22 -67 -29 -351 -72 l-73 -12 -85 -128 c-46 -70 -113 -183 -149
 -251 l-64 -124 59 -62 c77 -81 98 -83 247 -21 210 88 397 196 520 302 61 52

@@ -27,8 +27,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        transform: translateX(0);
-        transition: opacity 500ms ease-in-out, transform 1.5s ease-out;
+        transition: opacity 1s ease-in-out, transform 2s ease-out;
 }
 .section_even {
     background: linear-gradient(to top right, #fffff4 0%, #fffff4 25%, black 25%, black 75%, #fffff4 75%, #fffff4 100%)
@@ -70,6 +69,11 @@
     color: white;
     border: 2px solid white;
     border-radius: 5px;
+    transition: transform 250ms ease-in-out;
+}
+.section_button:hover {
+    transform:scale(1.1);
+    text-decoration: none;
 }
 
 .hidden {
@@ -79,7 +83,7 @@
 
 @media only screen and (max-width: 650px) {
     .section_top_text{
-        font-size: 10vw;
+        font-size: 5vh;
         width: 90%;
         line-height: 2;
     }
