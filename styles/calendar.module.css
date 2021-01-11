@@ -1,7 +1,9 @@
 .calendar{
     width: 50%;
-    border: 1px solid #fffff4;
+    max-width: 400px;
+    border: 1px solid black;
     align-self: center;
+    background: black;
 
 }
 .calendarControl{
@@ -72,7 +74,7 @@
 .disabled {
     background-color: black;
     color: #fffff4;
-    border: 1px solid #fffff4;
+    border: 1px solid black;
 }
 .past {
     background-color: grey;
@@ -84,4 +86,11 @@
     border: 1px solid #fffff4;
     text-align: center;
     font-size: 2vh;
+    background: #fffff4;
+}
+
+@media only screen and (max-width: 650px) {
+    .calendar {
+        display: none;
+    }
 }

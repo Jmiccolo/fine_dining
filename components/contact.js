@@ -17,7 +17,7 @@ export default function Contact(){
         })
             .then(res=>{
                 if(res.status === 200){
-                    setResponse({color:"#fffff4", text:`Thank you for your Email ${name}`});
+                    setResponse({color:"black", text:`Thank you for your Email ${name}`});
                     clearForm();
                 }
                 else{

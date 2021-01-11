@@ -38,8 +38,8 @@ export default function reservations(){
             setTimeSlots(newTimeSlots);
         }
         setTimeout(function(){
-            setLoadingMessage(`Thank you for your reservation. An email has been sent to ${email} where we will update you if anything changes.`)
-            setEmail("");
+            setLoadingMessage(`Thank you ${user.name} for your reservation. An email has been sent to ${user.email} where we will update you if anything changes.`)
+            setUser({email:"", name:""});
         }, 1000);
     }
     function handleInput(e){

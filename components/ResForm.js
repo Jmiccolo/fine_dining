@@ -27,8 +27,8 @@ const ResForm = ({date, setDate, timeSlots, handleSubmit, user, handleInput}) =>
     const formDate = `${date.year}-${date.month.toString().padStart(2, "0")}-${date.day.day.toString().padStart(2, "0")}`;
     return (
         <>
-        <h3>Schedule a Reservation:</h3>
             <form onSubmit={handleSubmit} className={styles.resForm}>
+                <h3>Schedule a Reservation:</h3>
                 <label htmlFor="email">Email:</label>
                 <input name="email" id="email" type="email" value={email} onChange={handleInput} required/>
                 <label htmlFor="name">Name:</label>

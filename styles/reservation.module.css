@@ -2,8 +2,8 @@
     display: flex;
     width: 100%;
     justify-content: space-around;
-    color: #fffff4;
-    background: black;
+    color: black;
+    background: #fffff4;
     padding: 2.5% 0;
 }
 .reservation_div {
@@ -31,6 +31,10 @@
     width: 100%;
 }
 
+.resForm input:active{
+    background-color: #fffff4;
+}
+
 .resForm button{
     font-size: 20px;
     background-color: black;
@@ -46,6 +50,26 @@
 
 .loading {
     height: 50vh;
+    padding: 20%;
     display: flex;
     align-items: center;
+}
+
+@media only screen and (max-width: 650px){
+    .reservation_div{
+        flex-direction: column-reverse;
+        justify-content: center;
+        width: 100%;
+    }
+    .reservation_contact{
+        flex-direction: column;
+    }
+    .resForm_container{
+        width: 100%;
+        flex-grow:1;
+    }
+    .resForm {
+        margin: auto;
+        width: 75%;
+    }
 }
