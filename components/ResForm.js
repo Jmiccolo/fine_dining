@@ -56,8 +56,8 @@ const ResForm = ({date, setDate, timeSlots, handleSubmit, user, handleInput}) =>
                 ):(
                     <div><h4>Sorry, no times available</h4></div>
                 )}
-                <label htmlFor="message">Special Instructions:</label>
-                <textarea name="message" id="message" cols="30" rows="5">
+                <label htmlFor="instructions">Special Instructions:</label>
+                <textarea name="message" id="instructions" cols="30" rows="5">
                 </textarea>
                 <button disabled={times? false : true}>Submit</button>
             </form>

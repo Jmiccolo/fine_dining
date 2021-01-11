@@ -23,9 +23,10 @@ const DateBoxes = ({date, handleDate})=>{
             DateBox.push(new Date(year, month, k));
         }
     }
+    const today = new Date();
     const Boxes = DateBox.map((val, index) => {
                 const value = JSON.stringify({day:val.getDate(), month:val.getMonth()+1, year:val.getFullYear()})
-                return (<div className={(day.day === val.getDate() && day.month-1 === val.getMonth() && day.year === val.getFullYear())? `${styles.date} ${styles.selected}`: (val.getMonth() !== month-1)?  `${styles.date} ${styles.disabled}` : (val.getDate() < new Date().getDate() || val.getMonth() < new Date().getMonth() || val.getYear() < new Date().getYear() )? `${styles.date} ${styles.past}` : styles.date} data-value={value} data-name="day" onClick={(val.getMonth() === month-1 && val.getDate() >= new Date().getDate())?handleDate:null} key={val}>
+                return (<div className={(day.day === val.getDate() && day.month-1 === val.getMonth() && day.year === val.getFullYear())? `${styles.date} ${styles.selected}`: (val.getMonth() !== month-1)?  `${styles.date} ${styles.disabled}` : (today >= val && today.getDate() !== val.getDate())? `${styles.date} ${styles.past}` : styles.date} data-value={value} data-name="day" onClick={(val.getMonth() === month-1 && val.getDate() >= new Date().getDate())?handleDate:null} key={val}>
             <h4>{val.getDate()}</h4>
             </div>)
     })

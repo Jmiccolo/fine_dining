@@ -11,8 +11,7 @@
 .section_div {
     display: flex;
     width: 100%;
-    max-width: 1200px;
-    padding: 0 5vh;
+    padding: 0 5vh 15vh 5vh;
     margin: auto;
     transition: opacity 1s ease-in-out, transform 2s ease-out;
 }
@@ -50,13 +49,18 @@
 
 @media only screen and (max-width: 650px){
     .section_div {
-        padding:0 5vh 15vh 5vh;
+        width: 100%;
+        padding: 0;
+        align-items: center;
     }
     .section_article h3 {
     font-size: 3.5vw;
     }
     .section_article p {
         font-size: 1.75vh;
+        width: 100%;
+    }
+    .section_img {
         width: 100%;
     }
 }

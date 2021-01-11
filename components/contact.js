@@ -41,11 +41,11 @@ export default function Contact(){
                         <h2>Contact Us</h2>
                         <form className={styles.resForm} id="contact" onSubmit={handleSubmit}>
                             <label htmlFor="from_name">Name</label>
-                            <input value={user.name} type="text" required name="from_name" onChange={handleChange}/>
+                            <input value={user.name} type="text" required id="from_name" name="from_name" onChange={handleChange}/>
                             <label htmlFor="reply_to">Email</label>
-                            <input value={user.email} type="email" required name="reply_to" onChange={handleChange}/>
+                            <input value={user.email} type="email" required id="reply_to" name="reply_to" onChange={handleChange}/>
                             <label htmlFor="message">Message</label>
-                            <textarea value={user.message} placeholder="Leave me a message here!" required name="message" cols="30" rows="10" onChange={handleChange}></textarea>
+                            <textarea value={user.message} placeholder="Leave me a message here!" required name="message" cols="30" rows="10" id="message" onChange={handleChange}></textarea>
                             <button>Submit</button>
                         </form>
         </div>)

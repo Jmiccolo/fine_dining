@@ -69,6 +69,10 @@
 }
 .selected {
     background-color: #c21e56;
+    color: #fffff4;
+}
+.selected h4{
+    color: #fffff4;
 }
 
 .disabled {
