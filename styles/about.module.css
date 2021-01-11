@@ -50,18 +50,42 @@
 @media only screen and (max-width: 650px){
     .section_div {
         width: 100%;
-        padding: 0;
+        padding: 0 2.5vh 15vh 2.5vh;
         align-items: center;
+        flex-direction: column;
+    }
+    .section_odd .section_div {
+        flex-direction: column-reverse;
+    }
+    .section_article {
+        margin: 5vh  0 0 0;
+        width: 75%;
+        align-self: flex-start;
     }
     .section_article h3 {
-    font-size: 3.5vw;
+        font-size: 3.5vh;
+        width: 95%;
     }
     .section_article p {
-        font-size: 1.75vh;
+        font-size: 2vh;
+        width: 90%;
+    }
+    .section_odd .section_article {
+        align-items: flex-end;
+        text-align: right;
+        align-self: flex-end;
+    }
+    .section_aside {
         width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .section_odd .section_aside {
+        justify-content: center;
     }
     .section_img {
-        width: 100%;
+        width: 95%;
+        max-width: 400px;
     }
 }
 

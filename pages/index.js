@@ -26,7 +26,7 @@ export default function Home(){
                 <p>Located in the heart of the Upper West Side, Elo&igrave;s&eacute; is a respite from the bustle of city life</p>
                 <Link href="/reservations"><a className={styles.section_button}>Reserve a Table</a></Link>
               </div>
-              <img className={styles.section_image} src="/images/dinner.jpg" alt="Salmon on a plate served on a table with a glowing ambience"/>
+              <img className={styles.section_image} loading="lazy" src="/images/dinner.jpg" alt="Salmon on a plate served on a table with a glowing ambience"/>
             </div>
           </section>
           <section className={`${styles.section} ${styles.section_odd}`}>
