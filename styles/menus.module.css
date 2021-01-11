@@ -1,7 +1,6 @@
 .menuNav {
     width: 100vw;
     position: sticky;
-    top: 8vh;
 }
 
 .menuNav_list {
@@ -39,13 +38,14 @@
 }
 
 .menu_page {
-    width:50%;
     border: 10px solid black;
     padding: 2.5%;
     margin: 2.5%;
+    flex: 1 0 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 .menu_page h2, .menu_page h3, .menu_page h4, .menu_page h5, .menu_page p {
@@ -94,4 +94,19 @@
 .menuList li {
     margin: 0;
     padding: 0;
+}
+.menuList h5 {
+    font-size: 2.2vh;
+}
+.menuList p {
+    font-size: 2vh;
+}
+
+@media only screen and (max-width: 650px){
+    .menu {
+        flex-direction: column;
+    }
+    .menu_page {
+        flex: 1 1 0;
+    }
 }

@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Link from "next/link"
 import Layout from "../components/layout"
 import styles from "../styles/menus.module.css";
@@ -7,12 +7,16 @@ import Lunch from "../components/lunch"
 import Brunch from "../components/brunch"
 export default function menus(){
   const [menu, setMenu] = useState("dinner");
+  let navHeight;
   function handleClick(e){
     setMenu(e.target.value)
   }
+  useEffect(function(){
+    navHeight = document.querySelector("nav").offsetHeight;
+  },[]);
     return (
         <Layout>
-        <nav className={styles.menuNav}>
+        <nav className={styles.menuNav} style={{top:navHeight}}>
             <ul className={styles.menuNav_list}>
                 <li>
                   <button className={menu === "dinner" ? styles.active : null} value="dinner" onClick={handleClick}>Dinner</button>
