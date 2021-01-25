@@ -1,30 +1,24 @@
 import styles from "../styles/reservation.module.css"
-const ResForm = ({date, setDate, timeSlots, handleSubmit, user, handleInput}) => {
+const ResForm = ({date, setDate, timeSlots, handleSubmit, user, handleInput, setShowMonth}) => {
     const {name, email} = user;
-    let day = date.day.day;
-    let month = date.day.month-1;
-    let times = timeSlots[month].dates[day];
+    let day = date.day;
+    let month = date.month + 1;
+    let times = timeSlots[date.month].dates[day];
     let displayTimes = []
     for(let time in times){
         displayTimes.push(<option key={time} value={`${time}`}>{`${time}:00PM`}</option>)
     }
     function handleDateInput(e){
-        const newDate = e.target.value.split("-").reduce((acc, next, index)=>{
-            next = parseInt(next);
-            if(index === 0){ 
-                acc.year = next;
-            }
-            else if(index === 1) { 
-                acc.month = next;
-            }
-            else{
-                acc.day = next;
-            } 
-            return acc;
-        }, {})
-        setDate({...date, year:newDate.year, month:newDate.month, day:newDate});
+        let newDate = e.target.value.split("-")
+        newDate = {
+            year: parseInt(newDate[0]),
+            month: parseInt(newDate[1])-1,
+            day: parseInt(newDate[2]),
+        }
+        setDate(newDate);
+        setShowMonth({year:newDate.year, month:newDate.month});
     }
-    const formDate = `${date.year}-${date.month.toString().padStart(2, "0")}-${date.day.day.toString().padStart(2, "0")}`;
+    const formDate = `${date.year}-${month.toString().padStart(2, "0")}-${date.day.toString().padStart(2, "0")}`;
     return (
         <>
             <form onSubmit={handleSubmit} className={styles.resForm}>

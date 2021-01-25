@@ -22,7 +22,7 @@
 .reservation_contact .resForm {
     align-items: center;
 }
-.reservation_contact .resForm label {
+.reservation_contact .resForm label, .reservation_contact .resForm button {
     align-self: flex-start;
 }
 .resForm input, .resForm textarea, .resForm select {
@@ -41,7 +41,7 @@
     color: #fffff4;
     border: 1px solid #fffff4;
     margin-top: 5px;
-    width: 50%;
+    width: fit-content;
 }
 
 .resForm_container{

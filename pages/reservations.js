@@ -10,31 +10,31 @@ import getOpenReservations from "../lib/fakeReservations"
 
 
 export default function reservations(){
-    const today = new Date().toLocaleDateString().split("/").map(value => parseInt(value));
-    // date hook
+    const today = new Date()
     const [date, setDate] = useState(
     {
-        month:today[0],
-        day: {month:today[0], day:today[1], year:today[2]},
-        year:today[2]
+        month:today.getMonth(),
+        day:today.getDate(),
+        year:today.getFullYear()
     }
     );
     const [user, setUser] = useState({name: "", email:""});
     const [timeSlots, setTimeSlots] = useState([]);
     const [loading, setLoading] = useState(true);
     const [loadingMessage, setLoadingMessage] = useState("Loading Available Reservations");
+    const [showMonth, setShowMonth] = useState({month:today.getMonth(), year:today.getFullYear()})
     
     function handleSubmit(e){
         setLoadingMessage("Submitting your Request");
         setLoading(true);
         let newTimeSlots;
-        if(timeSlots[date.day.month-1].dates[date.day.day][e.target.time.value] > 1){
+        if(timeSlots[date.month].dates[date.day][e.target.time.value] > 1){
             newTimeSlots = [...timeSlots];
-            newTimeSlots[date.day.month-1].dates[date.day.day][e.target.time.value]--;
+            newTimeSlots[date.month].dates[date.day][e.target.time.value]--;
             setTimeSlots(newTimeSlots);
         }else{
             newTimeSlots = [...timeSlots];
-            delete newTimeSlots[date.day.month-1].dates[date.day.day][e.target.time.value];
+            delete newTimeSlots[date.month].dates[date.day][e.target.time.value];
             setTimeSlots(newTimeSlots);
         }
         setTimeout(function(){
@@ -44,6 +44,9 @@ export default function reservations(){
     }
     function handleInput(e){
         setUser({...user, [e.target.name]: e.target.value})
+    }
+    function setCalendar(e){
+        setShowMonth({...showMonth, [e.target.name]: e.target.value})
     }
     useEffect(function(){
         if(timeSlots.length === 0){
@@ -67,9 +70,9 @@ export default function reservations(){
             <section className={styles.reservation}>
             <div className={styles.reservation_div}>
             <div className={styles.resForm_container}>
-                <ResForm date={date} setDate={setDate} timeSlots={timeSlots} user={user} handleInput={handleInput} handleSubmit={handleSubmit}/>
+                <ResForm date={date} setDate={setDate} timeSlots={timeSlots} user={user} handleInput={handleInput} handleSubmit={handleSubmit} setShowMonth={setShowMonth}/>
             </div>
-                <Calendar date={date} setDate={setDate} today={today}/>
+                <Calendar date={date} setDate={setDate} today={today} showMonth={showMonth} setShowMonth={setShowMonth} setCalendar={setCalendar}/>
             </div>
             </section>)}
             <section className={styles.reservation}>
