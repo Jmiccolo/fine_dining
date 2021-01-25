@@ -48,7 +48,7 @@ const ResForm = ({date, setDate, timeSlots, handleSubmit, user, handleInput, set
                     {displayTimes}
                 </select>
                 ):(
-                    <div><h4>Sorry, no times available</h4></div>
+                    <p>Sorry, no times available</p>
                 )}
                 <label htmlFor="instructions">Special Instructions:</label>
                 <textarea name="message" id="instructions" cols="30" rows="5">

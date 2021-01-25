@@ -4,20 +4,30 @@
     justify-content: space-around;
     color: black;
     background: #fffff4;
-    padding: 2.5% 0;
+    padding: 1%;
 }
 .reservation_div {
     width: 80%;
     display: flex;
+    align-items: flex-start;
 }
 .reservation_contact {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 .resForm {
     display: flex;
     flex-direction: column;
     width: 50%;
+    height: 60vh;
+}
+.resForm p {
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+    color: white;
+    background-color: #c21e56;
+    padding-left: 2%;
 }
 .reservation_contact .resForm {
     align-items: center;
